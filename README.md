@@ -36,7 +36,7 @@ ICE curves for single observation - model comparison:
 
 ## More examples
 
-To see more examples check [this file](https://rawcdn.githack.com/MI2DataLab/ceterisParibusExt/05a06de0de24a3e4f9b6fd98be34fc2a68b0ee3e/ceterisParibusD3/example.html) and play with commented examples in [code](https://github.com/MI2DataLab/ceterisParibusExt/blob/master/ceterisParibusD3/example.html).
+To see more examples check [this file](https://rawcdn.githack.com/ModelOriented/ceterisParibusD3/1150241cc4971ee3d0d4358fe59eb639ccbbad98/example.html) and play with commented examples in [code](https://github.com/ModelOriented/ceterisParibusD3/blob/master/example.html).
 
 ## How to use / installation
 
@@ -82,7 +82,7 @@ Parameter | Type | Required| Description
 
 #### Data parameters
 
-`data` contains information about every point of *Ceteris Paribus Profiles* generated for observations from `dataObs`. Examples of these objects are included in [examples](https://github.com/MI2DataLab/ceterisParibusExt/tree/master/ceterisParibusD3/examples), files such as *example1.js* include examples of `data` and files such as *example_obs1.js* corresponding `dataObs` arrays. There you can also find [R script](https://github.com/MI2DataLab/ceterisParibusExt/blob/master/ceterisParibusD3/examples/Ceteris%20Paribus%20Plots%20page%20-%20examples.R) to generate such files using `ceterisParibus` R package.
+`data` contains information about every point of *Ceteris Paribus Profiles* generated for observations from `dataObs`. Examples of these objects are included in [examples](https://github.com/ModelOriented/ceterisParibusD3/tree/master/examples), files such as *example1.js* include examples of `data` and files such as *example_obs1.js* corresponding `dataObs` arrays. There you can also find [R script](https://github.com/ModelOriented/ceterisParibusD3/blob/master/examples/Ceteris%20Paribus%20Plots%20page%20-%20examples.R) to generate such files using `ceterisParibus` R package.
 
 We describe general form of array `dataObs` on the *example_obs1.js* shown below. Each object in `dataObs` corresponds to one observation for which given model predicted target value. In case of *example_obs1.js* our dataset has only observation no. *1958* and we predict its target value using one model (*randomForest*), so `dataObs` has just 1 object in it. Characteristic keys are: `_yhat_` (keeps model prediction for given observation),  `_y_` (real target value for given prediction), `_label_` (label of model used for prediction), `_ids_` (id of observation). Combination of `_label_` and `_ids_` make given observation unique in array `data`. Rest of keys (i.e. `m2.price`, `construction.year`, `surface`, `floor`, `no.rooms`, `district`) are variable from given dataset - each variable has its own key-value entry.
 
@@ -182,7 +182,7 @@ Option | Type | Default | Required| Description
 
 #### Usage
 
-Example of code usage on exemplary data [`example12`](https://github.com/MI2DataLab/ceterisParibusExt/blob/master/ceterisParibusD3/examples/example12.js) and [`example_obs12`](https://github.com/MI2DataLab/ceterisParibusExt/blob/master/ceterisParibusD3/examples/example_obs12.js):
+Example of code usage on exemplary data [`example12`](https://github.com/ModelOriented/ceterisParibusD3/blob/master/examples/example12.js) and [`example_obs12`](https://github.com/ModelOriented/ceterisParibusD3/blob/master/examples/example_obs12.js):
 
 ```javascript
 var plot = new ceterisParibusD3.createPlot(div = "chartDiv", 
@@ -230,8 +230,8 @@ and its output:
 To report a bug or propose a new feature please review these guidelines:
 
 * make sure you have the latest version of the package
-* check whether it is not already in [Issues](https://github.com/MI2DataLab/ceterisParibusExt/issues)
-* add an issue following suitable template: for [bugs](https://github.com/MI2DataLab/ceterisParibusExt/blob/master/ceterisParibusD3/bug_template.md) or for [suggestions](https://github.com/MI2DataLab/ceterisParibusExt/blob/master/ceterisParibusD3/suggestion_template.md)
+* check whether it is not already in [Issues](https://github.com/ModelOriented/ceterisParibusD3/issues)
+* add an issue following suitable template: for [bugs](https://github.com/ModelOriented/ceterisParibusD3/blob/master/bug_template.md) or for [suggestions](https://github.com/ModelOriented/ceterisParibusD3/blob/master/suggestion_template.md).
 
 ## Acknowledgments
 
