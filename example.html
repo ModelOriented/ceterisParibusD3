@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+<meta charset="utf-8">
+
+	<title>ceterisParibusD3 example
+	</title>
+
+		<!-- loading D3 library, internet connection needed -->
+        <script src="https://d3js.org/d3.v5.min.js" charset="utf-8"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+                crossorigin="anonymous"></script>
+		
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+  
+        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/plug-ins/1.10.19/features/scrollResize/dataTables.scrollResize.min.js"></script>
+
+
+
+
+		<!-- loading external files -->
+
+        <!-- datasets -->		
+        <script src="./examples/example1.js" charset="utf-8" lang="js"></script>
+        <script src="./examples/example_obs1.js" charset="utf-8" lang="js"></script> 
+        <script src="./examples/example2.js" charset="utf-8" lang="js"></script>
+        <script src="./examples/example_obs2.js" charset="utf-8" lang="js"></script>
+        <script src="./examples/example3.js" charset="utf-8" lang="js"></script>
+        <script src="./examples/example_obs3.js" charset="utf-8" lang="js"></script>
+ 
+        <script src="./examples/example4.js" charset="utf-8" lang="js"></script>
+        <script src="./examples/example_obs4.js" charset="utf-8" lang="js"></script>
+
+        <script src="./examples/example5.js" charset="utf-8" lang="js"></script>
+        <script src="./examples/example_obs5.js" charset="utf-8" lang="js"></script>
+
+        <script src="./examples/example6.js" charset="utf-8" lang="js"></script>
+        <script src="./examples/example_obs6.js" charset="utf-8" lang="js"></script>
+
+        <script src="./examples/example7.js" charset="utf-8" lang="js"></script>
+        <script src="./examples/example_obs7.js" charset="utf-8" lang="js"></script>
+
+        <script src="./examples/example8.js" charset="utf-8" lang="js"></script>
+        <script src="./examples/example_obs8.js" charset="utf-8" lang="js"></script>
+
+        <script src="./examples/example9.js" charset="utf-8" lang="js"></script>
+        <script src="./examples/example_obs9.js" charset="utf-8" lang="js"></script>
+
+        <script src="./examples/example10.js" charset="utf-8" lang="js"></script>
+        <script src="./examples/example_obs10.js" charset="utf-8" lang="js"></script>
+
+        <script src="./examples/example11.js" charset="utf-8" lang="js"></script>
+        <script src="./examples/example_obs11.js" charset="utf-8" lang="js"></script>
+
+        <script src="./examples/example12.js" charset="utf-8" lang="js"></script>
+        <script src="./examples/example_obs12.js" charset="utf-8" lang="js"></script>
+
+        <script src="./examples/example13.js" charset="utf-8" lang="js"></script>
+        <script src="./examples/example_obs13.js" charset="utf-8" lang="js"></script>
+
+        <script src="./examples/example14.js" charset="utf-8" lang="js"></script>
+        <script src="./examples/example_obs14.js" charset="utf-8" lang="js"></script>
+
+        <script src="./examples/example15.js" charset="utf-8" lang="js"></script>
+        <script src="./examples/example_obs15.js" charset="utf-8" lang="js"></script>
+
+        <script src="./examples/example16.js" charset="utf-8" lang="js"></script>
+        <script src="./examples/example_obs16.js" charset="utf-8" lang="js"></script>
+
+        <script src="./examples/example17.js" charset="utf-8" lang="js"></script>
+        <script src="./examples/example_obs18.js" charset="utf-8" lang="js"></script>
+
+        <script src="./examples/example19.js" charset="utf-8" lang="js"></script>
+        <script src="./examples/example_obs19.js" charset="utf-8" lang="js"></script>
+
+        <script src="./examples/example20.js" charset="utf-8" lang="js"></script>
+        <script src="./examples/example_obs20.js" charset="utf-8" lang="js"></script>       
+
+        <script src="./examples/example21.js" charset="utf-8" lang="js"></script>
+        <script src="./examples/example_obs21.js" charset="utf-8" lang="js"></script>
+
+        <script src="./examples/example22.js" charset="utf-8" lang="js"></script>
+        <script src="./examples/example_obs22.js" charset="utf-8" lang="js"></script>
+
+
+        <!-- functions -->
+        <script src="./ceterisParibusD3.js" charset="utf-8" lang="js"></script>
+  
+</head>
+<body>
+
+<div id='chartDiv'> </div> <!-- style = "width: 100vh; height: 100vh;" -->
+
+<script type="text/javascript">
+
+// example 1
+
+var plot = new ceterisParibusD3.createPlot(div = "chartDiv", // container id (string) or selection of container (e.g. document.getElementById("chartDiv"))
+                       data = example12, // data (data calculated by ceterisparibus)
+                       dataObs = example_obs12, // data (data observations)
+                       options = { // options
+                                   variables: ["district",  "floor", 'no.rooms'],
+                                   color: 'district',
+                                   show_profiles: true, 
+                                   show_observations: true, 
+                                   show_rugs: true, 
+                                   show_residuals: true, 
+                                   aggregate_profiles: 'mean',
+                                   add_table: true,
+                                   no_colors: 3,
+                                   height: 400,
+                                   width: 800,
+                                   size_rugs: 0.5,
+                                   yaxis_title: '',
+                                   color_rugs: 'grey',
+                                   //auto_resize: true,
+                                   //font_size_axes:8,
+                                   categorical_order: [
+                                   { 'variable': 'district', 
+                                     'rank1': "Bielany", 
+                                     'rank2': "Bemowo", 
+                                     'rank3': "Mokotow", 
+                                     'rank4': "Ochota", 
+                                     'rank5': "Praga", 
+                                     'rank6': "Srodmiescie", 
+                                     'rank7': "Ursus", 
+                                     'rank8': "Ursynow", 
+                                     'rank9': "Wola", 
+                                     'rank10': "Zoliborz"
+                                  }
+                                  ]  
+
+                                }
+                       );
+
+
+
+
+// example 2
+/*
+new ceterisParibusD3.createPlot(div = "chartDiv",  
+                       data = example2, 
+                       dataObs = example_obs2, 
+                       options = { 
+                                   variables: ["surface",  "construction.year"],
+                                   color: null,
+                                   show_profiles: true, 
+                                   show_observations: true, 
+                                   show_rugs: true, 
+                                   show_residuals: false, 
+                                   aggregate_profiles: null
+                                }
+                       ); 
+
+*/
+// example 3
+/*
+new ceterisParibusD3.createPlot(div = "chartDiv",  
+                       data = example3, 
+                       dataObs = example_obs3, 
+                       options = {  
+                                   variables: ["surface",  "construction.year"],
+                                   color: null,
+                                   show_profiles: false, 
+                                   show_observations: true, 
+                                   show_rugs: false, 
+                                   show_residuals: false, 
+                                   aggregate_profiles: null
+                                }
+                       ); 
+*/
+// example 4
+/*
+new ceterisParibusD3.createPlot(div = "chartDiv",  
+                       data = example4, 
+                       dataObs = example_obs4, 
+                       options = {  
+                                   variables: ["surface",  "construction.year"],
+                                   color: null,
+                                   show_profiles: false, 
+                                   show_observations: false, 
+                                   show_rugs: true, 
+                                   show_residuals: false, 
+                                   aggregate_profiles: null
+                                }
+                       ); 
+
+*/
+// example 5
+
+/*
+new ceterisParibusD3.createPlot(div = "chartDiv",  
+                       data = example5, 
+                       dataObs = example_obs5, 
+                       options = {  
+                                   variables: ["surface",  "construction.year"],
+                                   color: null,
+                                   show_profiles: true, 
+                                   show_observations: false, 
+                                   show_rugs: false, 
+                                   show_residuals: false, 
+                                   aggregate_profiles: null
+                                }
+                       ); 
+*/
+// example 6
+
+/*
+new ceterisParibusD3.createPlot(div = "chartDiv",  
+                       data = example6, 
+                       dataObs = example_obs6, 
+                       options = {  
+                                   variables: ["surface",  "construction.year"],
+                                   color: null,
+                                   show_profiles: false, 
+                                   show_observations: false, 
+                                   show_rugs: false, 
+                                   show_residuals: true, 
+                                   aggregate_profiles: null
+                                }
+                       ); 
+*/
+
+// example 7
+
+/*
+new ceterisParibusD3.createPlot(div = "chartDiv",  
+                       data = example7, 
+                       dataObs = example_obs7, 
+                       options = {  
+                                   variables: ["surface",  "construction.year"],
+                                   color: null,
+                                   show_profiles: false, 
+                                   show_observations: false, 
+                                   show_rugs: false, 
+                                   show_residuals: false, 
+                                   aggregate_profiles: 'mean',
+                                   size_pdps: 4
+                                }
+                       ); 
+*/
+
+// example 8
+/*
+new ceterisParibusD3.createPlot(div = "chartDiv",  
+                       data = example8, 
+                       dataObs = example_obs8, 
+                       options = {  
+                                   variables: ["surface",  "construction.year", 'no.rooms', 'floor'],
+                                   color: 'district',
+                                   show_profiles: true, 
+                                   show_observations: false, 
+                                   show_rugs: false, 
+                                   show_residuals: false, 
+                                   aggregate_profiles: null,
+                                   alpha_ices: 1
+                                }
+                       ); 
+*/
+// example 9
+/*
+new ceterisParibusD3.createPlot(div = "chartDiv",  
+                       data = example9, 
+                       dataObs = example_obs9, 
+                       options = {  
+                                   variables: ["surface",  "construction.year"],
+                                   color: 'surface',
+                                   show_profiles: true, 
+                                   show_observations: true, 
+                                   show_rugs: false, 
+                                   show_residuals: false, 
+                                   aggregate_profiles: null,
+                                   alpha_ices: 1
+                                }
+                       ); 
+
+*/
+// example 10
+/*
+new ceterisParibusD3.createPlot(div = "chartDiv",  
+                       data = example10, 
+                       dataObs = example_obs10, 
+                       options = {  
+                                   variables: ["surface",  "construction.year"],
+                                   color: null,
+                                   show_profiles: true, 
+                                   show_observations: true, 
+                                   show_rugs: false, 
+                                   show_residuals: false, 
+                                   aggregate_profiles: null
+                                }
+                       ); 
+*/
+// example 11
+/*
+new ceterisParibusD3.createPlot(div = "chartDiv",  
+                       data = example10, 
+                       dataObs = example_obs10, 
+                       options = {  
+                                   variables: ["surface",  "construction.year"],
+                                   color: 'blue',
+                                   show_profiles: true, 
+                                   show_observations: true, 
+                                   show_rugs: true, 
+                                   show_residuals: true, 
+                                   aggregate_profiles: null,
+                                   color_points: 'orange',
+                                   color_residuals: 'red',
+                                   color_rugs: 'green',
+                                   alpha_ices: 0.3,
+                                   alpha_points: 0.3,
+                                   alpha_residuals: 0.5,
+                                   alpha_rugs: 1,
+                                   size_points: 5,
+                                   size_rugs: 0.5
+                                }
+                       ); 
+*/
+
+// example 12
+
+/*
+new ceterisParibusD3.createPlot(div = "chartDiv", 
+                       data = example10, 
+                       dataObs = example_obs10, 
+                       options = {  
+                                   variables: ["surface",  "construction.year"],
+                                   color: null,
+                                   show_profiles: true, 
+                                   show_observations: false, 
+                                   show_rugs: true, 
+                                   show_residuals: true, 
+                                   aggregate_profiles: 'mean', 
+                                   color_residuals: 'red',
+                                   size_residuals: 4,
+                                   alpha_pdps: 1,
+                                   size_pdps: 4
+                                }                     
+                       ); 
+*/ 
+
+
+</script>
+</body>
+</html>
